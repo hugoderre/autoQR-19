@@ -46,11 +46,12 @@
                         'value' =>  $_COOKIE['fname'] ?? ''
                     ],
                     'birthday_date' => [
-                        'type' => isset($_COOKIE['birthday_date']) ? 'date' :'text',
+                        'type' => 'text',
                         'label' => 'Date de naissance',
                         'size' => 'col-6',
                         'value' =>  $_COOKIE['birthday_date'] ?? '',
-                        'args' => isset($_COOKIE['birthday_date']) ? '' : 'onfocus="(this.type=\'date\')""'
+                        'args' => $_COOKIE['birthday_date'] ?? '',
+                        'id' => 'birthday_date'
                     ],
                     'birthday_place' => [
                         'type' => 'text',
@@ -80,7 +81,7 @@
 
                 foreach ($inputsFields as $key => $input) : ?>
                     <div class="form-group <?= $input['size'] ?>">
-                        <input type="<?= $input['type'] ?>" class="form-control form-control-lg <?= $input['class'] ?? '' ?>" value="<?= $input['value'] ?? '' ?>" name="<?= $key ?>" id="<?= $key ?>" placeholder="<?= $input['label'] ?>" <?= $input['args'] ?? '' ?>">
+                        <input type="<?= $input['type'] ?>" class="form-control form-control-lg <?= $input['class'] ?? '' ?>" id="<?= $input['id'] ?? '' ?>" value="<?= $input['value'] ?? '' ?>" name="<?= $key ?>" id="<?= $key ?>" placeholder="<?= $input['label'] ?>" <?= $input['args'] ?? '' ?>">
                     </div>
                 <?php endforeach; ?>
                 <input type="hidden" name="nonce_form">
@@ -115,6 +116,14 @@
         <p><br><em>Ce site à recourt à l'utilisation de cookies utiles à ce que vous n'ayez pas à retaper sans cesse vos informations !</em></p>
     </div>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <script>
+        var dtt = document.getElementById('birthday_date');
+        dtt.onfocus = function (event) {
+            console.log('yep')
+            this.type = 'date';
+            this.focus();
+        }
+    </script>
 </body>
 
 </html>
