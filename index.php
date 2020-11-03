@@ -119,7 +119,6 @@
     <script>
         var dtt = document.getElementById('birthday_date');
         dtt.onfocus = function (event) {
-            console.log('yep')
             this.type = 'date';
             this.focus();
         }
