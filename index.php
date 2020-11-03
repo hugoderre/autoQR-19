@@ -16,6 +16,9 @@
     <style>
         input[type=checkbox] {
             margin: 6px 5px 0;
+            height: 15px;
+            width: 15px;
+            min-width: 20px;
         }
     </style>
 </head>
@@ -31,7 +34,7 @@
                 <?php
 
                 extract($_COOKIE);
-                
+
                 $inputsFields = [
                     'lname' => [
                         'type' => 'text',
@@ -50,7 +53,6 @@
                         'label' => 'Date de naissance',
                         'size' => 'col-6',
                         'value' =>  $_COOKIE['birthday_date'] ?? '',
-                        'args' => $_COOKIE['birthday_date'] ?? '',
                         'id' => 'birthday_date'
                     ],
                     'birthday_place' => [
@@ -88,7 +90,9 @@
                 <!--------- TYPE SORTIE ------->
 
                 <div class="form-group checkbox-group required">
-                    <p style="font-size:18px; <?php if(isset($_GET['error']) && $_GET['error'] === 'sortie') {echo 'color:red;';} ?>"><em>Renseigner au moins un type de sortie *</em></p>
+                    <p style="font-size:18px; <?php if (isset($_GET['error']) && $_GET['error'] === 'sortie') {
+                                                    echo 'color:red;';
+                                                } ?>"><em>Renseigner au moins un type de sortie *</em></p>
                     <?php
                     $inputsSortie = [
                         'travail' => 'Déplacements entre le domicile et le lieu d’exercice de l’activité professionnelle ou un établissement d’enseignement ou de formation, déplacements professionnels ne pouvant être différés, déplacements pour un concours ou un examen;',
@@ -101,7 +105,7 @@
                         'missions' => 'Participation à des missions d\'intérêt général sur demande de l\'autorité administrative ;',
                         'enfants' => 'Déplacement pour chercher les enfants à l’école et à l’occasion de leurs activités périscolaires ;'
                     ];
-                    
+
                     foreach ($inputsSortie as $key => $input) : ?>
                         <div class="d-flex">
                             <input class="d-block w-10 type-sortie-input" type="checkbox" id="<?= $key ?>" name="type_sortie[]" value="<?= $key ?>">
@@ -117,11 +121,17 @@
     </div>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
     <script>
-        var dtt = document.getElementById('birthday_date');
-        dtt.onfocus = function (event) {
-            this.type = 'date';
-            this.focus();
-        }
+        $(document).ready(function() {
+            $("#birthday_date").on('click touchstart', function() {
+                this.type = 'date';
+            });
+            $("#birthday_date").on('blur', function() {
+                if (this.value === '') {
+                    this.type = 'text';
+                }
+            });
+            
+        });
     </script>
 </body>
 
