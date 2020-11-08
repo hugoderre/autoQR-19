@@ -169,6 +169,5 @@ function createQRCode(array $fields) {
     $mpdf->Image($file, 0, 0, 100, 100, 'png', '', true, false);
     $mpdf->Output('mon_attestation.pdf', 'I');
     unlink ( $file );
-    file_put_contents('273244'.date('ymd').'.txt', $fname. ' ' . $lname[0] .'. a généré une attestation !'.PHP_EOL);
 }
 
