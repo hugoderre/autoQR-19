@@ -35,7 +35,7 @@
 <body>
     <div class="container mt-5">
         <h1>Auto QRCode Covid-19 😷</h1>
-        <p>En ces temps de confinement dù au Covid-19, <strong>autoQR-19</strong> est un outil vous permettant, à chaque actualisation de la page, de regénérer automatiquement votre QR Code d'attestation de sortie,et ainsi rafraichir l'heure de sortie. Le QR Code généré sera bien sûr <strong>identique</strong> à ceux générés par le site du gouvernement.</p>
+        <p>En ces temps de confinement dù au Covid-19, <strong>autoQR-19</strong> est un outil vous permettant, à chaque actualisation de la page, de regénérer automatiquement votre attestation de sortie, et ainsi rafraichir l'heure de sortie.
         <p>Entrez vos information dans les champs ci-dessous pour générer votre QR Code. Pour le régénerer avec l'heure de sortie à l'heure actuelle, actualisez seulement le PDF.</p>
         <form action="/qrcode.php" method="post">
             <div class="form-row">
@@ -126,7 +126,8 @@
             <button type="submit" id="submit" class="w-100 mb-3 form-submit btn btn-primary">Envoyer</button>
 
         </form>
-        <p><br><em>Ce site à recourt à l'utilisation de cookies utiles à ce que vous n'ayez pas à retaper sans cesse vos informations !</em></p>
+        <p><br><em>Ce site à recourt à l'utilisation de cookies utiles à ce que vous n'ayez pas à retaper sans cesse vos informations ! <br>Nous ne stockons aucune information personnelle !</em></p>
+        <p><em><a href="mentions-legales.php">Mentions légales</a></em></p>
     </div>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
     <script>
