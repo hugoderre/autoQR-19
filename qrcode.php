@@ -146,8 +146,8 @@ function createQRCode(array $fields) {
     extract($fields);
     // Get current date
     $decalage = time() - (30 * 60);
-    $currentDate = date('d/m/Y', $decalage);
-    $currentTime = date('G\hi', $decalage );
+    $currentDate = date('d/m/Y');
+    $currentTime = date('G\hi');
 
     $file = 'qrcode'.date('-ymd-hi').'.png';
     $type_sortie = $type_sortie ?? '';
