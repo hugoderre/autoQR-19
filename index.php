@@ -21,6 +21,14 @@
             min-width: 20px;
         }
     </style>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZVZVDKCZBH"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-ZVZVDKCZBH');
+    </script>
 </head>
 
 <body>
