@@ -6,12 +6,13 @@
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Auto QRCode Covid-19</title>
+    <meta name="description" content="<p>En ces temps de confinement dù au Covid-19, <strong>autoQR-19</strong> est un outil vous permettant, à chaque actualisation de la page, de regénérer automatiquement votre QR Code d'attestation de sortie,et ainsi rafraichir l'heure de sortie. Le QR Code généré sera bien sûr <strong>identique</strong> à ceux générés par le site du gouvernement.</p>">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     <style>
         input[type=checkbox] {
